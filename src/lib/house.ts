@@ -164,7 +164,7 @@ export function startVisit(h: House, rawCode: string) {
   return {
     kind: "visit" as const,
     ok: true,
-    speech: `Welcome, ${p.name}. I can help with ${list(labels.map((l) => l.toLowerCase()))}, and emergencies.${news}`,
+    speech: `Welcome, ${p.name}. I can help with ${list([...labels.map((l) => l.toLowerCase()), "emergencies"])}.${news}`,
     pass: publicPass(p),
     sectionLabels: labels,
     answered: answered.map((q) => ({ question: q.text, answer: q.answer! })),
@@ -428,7 +428,13 @@ export function recap(h: House, a: Audience, limit = 8) {
   const open = h.questions.filter((q) => q.status === "open").length;
   const guests = [...new Set(items.filter((x) => x.who && x.who !== h.owner).map((x) => x.who!))];
   const here = h.visit ? h.passes.find((p) => p.code === h.visit!.code)?.name : null;
-  const speech = guests.length ? `${list(guests)} ${guests.length === 1 ? "has" : "have"} been using Keeper.${here ? ` ${here} is here now.` : ""}${open ? ` ${plural(open, "question")} need${open === 1 ? "s" : ""} your answer.` : " Nothing is waiting on you."}` : "No guests have used Keeper yet.";
+  const lines = guests.map((g) => {
+    const heard = [...new Set(items.filter((x) => x.who === g).map((x) => x.text.match(/ and heard "(.+)"\.$/)?.[1]).filter(Boolean) as string[])];
+    const sent = h.questions.filter((q) => q.by === g && q.status === "open").map((q) => q.text);
+    const parts = [heard.length ? `heard ${list(heard)}` : "", sent.length ? `asked you ${sent.length === 1 ? `"${sent[0]}"` : `${sent.length} questions`}` : ""].filter(Boolean);
+    return `${g} ${parts.length ? list(parts) : "checked in"}.`;
+  });
+  const speech = guests.length ? `${lines.join(" ")}${here ? ` ${here} is here now.` : ""}${open ? ` ${plural(open, "question")} need${open === 1 ? "s" : ""} your answer.` : " Nothing is waiting on you."}` : "No guests have used Keeper yet.";
   return { kind: "recap" as const, speech, activity: items, open, here: here ?? null };
 }
 

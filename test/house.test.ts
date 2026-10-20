@@ -130,6 +130,15 @@ describe("owner loop", () => {
     expect(again.speech).toContain("Ava");
   });
 
+  it("recaps what each guest heard and asked", () => {
+    const h = fresh();
+    const lee = guest(h, "6150");
+    K.ask(h, lee, "When does Biscuit eat?");
+    K.ask(h, lee, "What's the wifi password?");
+    const r = K.recap(h, K.audienceOf(h, "owner-key"));
+    expect(r.speech).toBe(`Lee heard Biscuit's dinner and asked you "What's the wifi password?". Lee is here now. 1 question needs your answer.`);
+  });
+
   it("saves new notes as private until shared", () => {
     const h = fresh();
     const owner = K.audienceOf(h, "owner-key");

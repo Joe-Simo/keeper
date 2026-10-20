@@ -14,7 +14,7 @@ the owner, who answers by voice. The next time that person asks, Keeper tells th
 
 Built for the Amazon Developer Hackathon "Build, Ship, Shape", Alexa+ track.
 
-Live: https://keeper-simo-js.vercel.app (simulated Alexa+ web app) · MCP endpoint: `/api/mcp`
+Live: https://keeper-lake-iota.vercel.app (simulated Alexa+ web app) · MCP endpoint: `/api/mcp`
 
 ## What it does
 
