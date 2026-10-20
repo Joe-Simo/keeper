@@ -164,7 +164,7 @@ export function startVisit(h: House, rawCode: string) {
   return {
     kind: "visit" as const,
     ok: true,
-    speech: `Welcome, ${p.name}. I can help with ${list([...labels.map((l) => l.toLowerCase()), "emergencies"])}.${news}`,
+    speech: `Welcome, ${p.name}. I can help with ${list([...labels.map((l) => (l === "Wi-Fi" ? l : l.toLowerCase())), "emergencies"])}.${news}`,
     pass: publicPass(p),
     sectionLabels: labels,
     answered: answered.map((q) => ({ question: q.text, answer: q.answer! })),
