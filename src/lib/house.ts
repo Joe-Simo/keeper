@@ -429,10 +429,11 @@ export function recap(h: House, a: Audience, limit = 8) {
   const guests = [...new Set(items.filter((x) => x.who && x.who !== h.owner).map((x) => x.who!))];
   const here = h.visit ? h.passes.find((p) => p.code === h.visit!.code)?.name : null;
   const lines = guests.map((g) => {
-    const heard = [...new Set(items.filter((x) => x.who === g).map((x) => x.text.match(/ and heard "(.+)"\.$/)?.[1]).filter(Boolean) as string[])];
-    const sent = h.questions.filter((q) => q.by === g && q.status === "open").map((q) => q.text);
-    const parts = [heard.length ? `heard ${list(heard)}` : "", sent.length ? `asked you ${sent.length === 1 ? `"${sent[0]}"` : `${sent.length} questions`}` : ""].filter(Boolean);
-    return `${g} ${parts.length ? list(parts) : "checked in"}.`;
+    const mine = h.activity.filter((x) => x.who === g);
+    const heard = [...new Set(mine.map((x) => x.text.match(/ and heard "(.+)"\.$/)?.[1]).filter(Boolean) as string[])].reverse();
+    const sent = h.questions.filter((q) => q.by === g).length;
+    const parts = [heard.length ? `got answers on ${list(heard)}` : "", sent ? `sent you ${sent === 1 ? "one question" : `${sent} questions`}` : ""].filter(Boolean);
+    return `${g} ${parts.length ? parts.join(", and ") : "checked in"}.`;
   });
   const speech = guests.length ? `${lines.join(" ")}${here ? ` ${here} is here now.` : ""}${open ? ` ${plural(open, "question")} need${open === 1 ? "s" : ""} your answer.` : " Nothing is waiting on you."}` : "No guests have used Keeper yet.";
   return { kind: "recap" as const, speech, activity: items, open, here: here ?? null };

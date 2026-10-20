@@ -136,7 +136,7 @@ describe("owner loop", () => {
     K.ask(h, lee, "When does Biscuit eat?");
     K.ask(h, lee, "What's the wifi password?");
     const r = K.recap(h, K.audienceOf(h, "owner-key"));
-    expect(r.speech).toBe(`Lee heard Biscuit's dinner and asked you "What's the wifi password?". Lee is here now. 1 question needs your answer.`);
+    expect(r.speech).toBe("Lee got answers on Biscuit's dinner, and sent you one question. Lee is here now. 1 question needs your answer.");
   });
 
   it("saves new notes as private until shared", () => {
