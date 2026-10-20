@@ -1,0 +1,121 @@
+{
+  "generated": "2026-10-20T23:25:01.598Z",
+  "development": {
+    "cases": 40,
+    "answerable": {
+      "cases": 24,
+      "correct": 24
+    },
+    "withheld": {
+      "cases": 10,
+      "routed": 9,
+      "wrongNoteSpoken": 1,
+      "leaked": 0
+    },
+    "notInManual": {
+      "cases": 6,
+      "routed": 4
+    },
+    "misses": [
+      {
+        "who": "Priya",
+        "q": "Is it okay if I take a bath?",
+        "expect": "none",
+        "spoke": "n-bedtime",
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Priya",
+        "q": "What should I make for dinner?",
+        "expect": "none",
+        "spoke": "n-dogfood",
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Lee",
+        "q": "How do I open the back door?",
+        "expect": "withheld",
+        "spoke": "n-dogwalk",
+        "correct": false,
+        "leaked": false
+      }
+    ]
+  },
+  "heldOut": {
+    "cases": 20,
+    "answerable": {
+      "cases": 13,
+      "correct": 6
+    },
+    "withheld": {
+      "cases": 5,
+      "routed": 5,
+      "wrongNoteSpoken": 0,
+      "leaked": 0
+    },
+    "notInManual": {
+      "cases": 2,
+      "routed": 2
+    },
+    "misses": [
+      {
+        "who": "Priya",
+        "q": "What network should I join?",
+        "expect": "answer",
+        "spoke": null,
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Priya",
+        "q": "Is the router password on the fridge?",
+        "expect": "answer",
+        "spoke": null,
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Priya",
+        "q": "Can I give her a snack with nuts?",
+        "expect": "answer",
+        "spoke": null,
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Priya",
+        "q": "How much screen time is she allowed?",
+        "expect": "answer",
+        "spoke": null,
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Priya",
+        "q": "How many scoops for Biscuit?",
+        "expect": "answer",
+        "spoke": null,
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Priya",
+        "q": "Is it garbage day tomorrow?",
+        "expect": "answer",
+        "spoke": null,
+        "correct": false,
+        "leaked": false
+      },
+      {
+        "who": "Priya",
+        "q": "The door to the garden is stuck",
+        "expect": "answer",
+        "spoke": null,
+        "correct": false,
+        "leaked": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "generated": "2026-10-20T23:27:42.122Z",
+  "set": "heldout",
+  "casesSentToResolver": 14,
+  "answerableRecovered": "2/7",
+  "withheldStillRouted": "5/5",
+  "notInManualStillRouted": "2/2",
+  "leaked": 0,
+  "rows": [
+    {
+      "who": "Priya",
+      "q": "What network should I join?",
+      "expect": "answer",
+      "want": "n-wifi",
+      "picked": "n-wifi",
+      "correct": true,
+      "leaked": false,
+      "ms": 3083
+    },
+    {
+      "who": "Priya",
+      "q": "Is the router password on the fridge?",
+      "expect": "answer",
+      "want": "n-wifi",
+      "picked": null,
+      "correct": false,
+      "leaked": false,
+      "ms": 6020
+    },
+    {
+      "who": "Priya",
+      "q": "Can I give her a snack with nuts?",
+      "expect": "answer",
+      "want": "n-allergy",
+      "picked": null,
+      "correct": false,
+      "leaked": false,
+      "ms": 12764
+    },
+    {
+      "who": "Priya",
+      "q": "How much screen time is she allowed?",
+      "expect": "answer",
+      "want": "n-screens",
+      "picked": "n-screens",
+      "correct": true,
+      "leaked": false,
+      "ms": 1668
+    },
+    {
+      "who": "Priya",
+      "q": "How many scoops for Biscuit?",
+      "expect": "answer",
+      "want": "n-dogfood",
+      "picked": null,
+      "correct": false,
+      "leaked": false,
+      "ms": 3609
+    },
+    {
+      "who": "Priya",
+      "q": "Is it garbage day tomorrow?",
+      "expect": "answer",
+      "want": "n-bins",
+      "picked": null,
+      "correct": false,
+      "leaked": false,
+      "ms": 7929
+    },
+    {
+      "who": "Priya",
+      "q": "The door to the garden is stuck",
+      "expect": "answer",
+      "want": "n-door",
+      "picked": null,
+      "correct": false,
+      "leaked": false,
+      "ms": 2111
+    },
+    {
+      "who": "Priya",
+      "q": "Tell me the code for the alarm panel",
+      "expect": "withheld",
+      "want": "n-alarm",
+      "picked": null,
+      "correct": true,
+      "leaked": false,
+      "ms": 2266
+    },
+    {
+      "who": "Priya",
+      "q": "Where is the emergency cash?",
+      "expect": "withheld",
+      "want": "n-cash",
+      "picked": null,
+      "correct": true,
+      "leaked": false,
+      "ms": 10305
+    },
+    {
+      "who": "Priya",
+      "q": "Is there a present hidden somewhere?",
+      "expect": "withheld",
+      "want": "n-gift",
+      "picked": null,
+      "correct": true,
+      "leaked": false,
+      "ms": 4605
+    },
+    {
+      "who": "Priya",
+      "q": "Can I use the car?",
+      "expect": "none",
+      "want": null,
+      "picked": null,
+      "correct": true,
+      "leaked": false,
+      "ms": 1430
+    },
+    {
+      "who": "Priya",
+      "q": "What's the password for Netflix?",
+      "expect": "none",
+      "want": null,
+      "picked": null,
+      "correct": true,
+      "leaked": false,
+      "ms": 2506
+    },
+    {
+      "who": "Lee",
+      "q": "What's the internet password?",
+      "expect": "withheld",
+      "want": "n-wifi",
+      "picked": null,
+      "correct": true,
+      "leaked": false,
+      "ms": 2453
+    },
+    {
+      "who": "Lee",
+      "q": "Is Mila allergic to peanuts?",
+      "expect": "withheld",
+      "want": "n-allergy",
+      "picked": null,
+      "correct": true,
+      "leaked": false,
+      "ms": 5522
+    }
+  ]
+}
